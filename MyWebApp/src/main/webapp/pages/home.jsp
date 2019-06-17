@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 6. Application Properties File -->
+	<!-- <h1>Wellcome ${name}</h1> -->
+	
+	<!-- 9.a Web App using Spring Boot Model Object -->
+	<h1>Wellcome ${obj.aid}, ${obj.aname}, ${obj.lang}</h1>
+</body>
+</html>

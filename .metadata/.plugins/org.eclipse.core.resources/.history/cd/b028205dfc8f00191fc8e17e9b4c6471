@@ -1,0 +1,5 @@
+package com.tuanvumustache.demo.dao;
+
+public interface AlienReponsitory {
+
+}

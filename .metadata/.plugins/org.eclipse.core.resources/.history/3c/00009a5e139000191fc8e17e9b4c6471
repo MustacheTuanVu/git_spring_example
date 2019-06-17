@@ -1,0 +1,9 @@
+package com.tuanvumustache.demo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.tuanvumustache.demo.model.Alien;
+
+public interface AlienReponsitory extends JpaRepository<Alien, Integer>{
+	
+}

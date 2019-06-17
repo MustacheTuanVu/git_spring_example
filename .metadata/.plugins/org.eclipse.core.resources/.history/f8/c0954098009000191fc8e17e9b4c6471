@@ -1,0 +1,13 @@
+package com.tuanvumustache.demo.dao;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.tuanvumustache.demo.model.Alien;
+
+public interface AlienReponsitory extends CrudRepository<Alien, Integer>{
+	// 12. Data JPA | MVC | H2 | Query Methods Example
+	List<Alien> findByName(String aname);
+	List<Alien> findByIDGreateThan(int aid);
+}

@@ -1,0 +1,50 @@
+package com.tuanvumustache.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.tuanvumustache.demo.dao.AlienReponsitory;
+import com.tuanvumustache.demo.model.Alien;
+
+// 10. JPA | MVC | H2 Example
+@Controller
+public class AlienController {
+	
+	@Autowired
+	AlienReponsitory alienReponsitory;
+	
+	@RequestMapping("/")
+	public String home() {
+		return "home.jsp";
+	}
+	
+	@RequestMapping("/addAlien")
+	public String addAlien(Alien alien) {
+		alienReponsitory.save(alien);
+		return "home.jsp";
+	}
+	
+	// 11. JPA | MVC | H2 Example Part 2 
+	@RequestMapping("/aliens/{aid}")
+	@ResponseBody // 13. Data JPA | MVC | H2 | REST Example -- remove ModelAndView
+	public String getAliens(@PathVariable("aid") int aid) { // 13. Data JPA | MVC | H2 | REST Example -- remove ModelAndView & @RequestParam 
+		//ModelAndView modelAndView = new ModelAndView("showAlien.jsp");
+		//Alien alien = alienReponsitory.findById(aid).orElse(new Alien());
+		
+//		System.out.println(alienReponsitory.findByAname("Draven"));
+//		System.out.println(alienReponsitory.findByAidGreaterThan(103));
+//		System.out.println(alienReponsitory.findByAnameSorted("a"));
+		
+		//modelAndView.addObject(alien);
+		
+		//return modelAndView;
+		
+		// 13. Data JPA | MVC | H2 | REST Example -- remove ModelAndView
+		return alienReponsitory.findById(aid).toString();
+	}
+}

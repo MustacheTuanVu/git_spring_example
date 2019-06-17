@@ -1,0 +1,9 @@
+package com.tuanvumustache.demo.dao;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.tuanvumustache.demo.model.Alien;
+
+public interface AlienReponsitory extends CrudRepository<Alien, Integer>{
+	
+}

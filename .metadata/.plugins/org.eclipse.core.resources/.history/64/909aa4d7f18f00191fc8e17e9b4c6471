@@ -1,0 +1,23 @@
+package com.tuanvumustache.demo;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class HomeController {
+	
+	//5. Web App using Spring Boot
+	@RequestMapping("home")
+//	@ResponseBody
+	public String home(HttpServletRequest request) { // 7. Accepting Client Data -- add request
+		System.out.println("Hi...");
+		
+		//return "home.jsp";
+		
+		String name = request.getParameter("name");
+		return "home"; //6. Application Properties File
+	}
+}
